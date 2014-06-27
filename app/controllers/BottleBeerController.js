@@ -8,8 +8,9 @@
         
         function init() {
             BottleBeerFactory.getBottleBeer()
-                .success(function(customers) {
-                    $scope.bottleBeers = customers;
+                .success(function(bottleBeers) {
+                    $log.log("HTTP REQUEST SUCCESSFUL");
+
                 })
                 .error(function(data, status, headers, config) {
                     $log.log(data.error + ' ' + status);
@@ -18,8 +19,8 @@
         
         init();
         
-        $scope.doSort = function(propName) {
-           $scope.sortBy = propName;
+        $scope.doSort = function(pName) {
+           $scope.sortBy = pName;
            $scope.reverse = !$scope.reverse;
         };
     };

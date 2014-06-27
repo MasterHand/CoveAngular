@@ -1,6 +1,7 @@
 angular.module('coveApp').value('appSettings', {
     title: 'Cove App Admin',
     version: '0.1'
+
 });
 
 /*angular.module('coveApp').constant('appSettings', {
