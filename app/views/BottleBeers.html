@@ -1,0 +1,37 @@
+<h2>{{ appSettings.title }}</h2>
+Search by Name: <input type="text" data-ng-model="bottleBeerFilter.name" />
+<br /><br />
+<table>
+    <tr>
+        <!-- NOTE: USE THE PROPER FIELD -->
+        <th data-ng-click="doSort('name')">Drink Name</th>
+
+        <!--
+        <th ng-click="doSort('city')">City</th>
+        <th ng-click="doSort('orderTotal')">Order Total</th>
+        <th ng-click="doSort('joined')">Joined</th>
+        <th>&nbsp;</th>
+        -->
+
+    </tr>
+
+    <!-- <tr data-ng-repeat="beer in bottleBeers | filter:bottleBeerFilter | orderBy:sortBy:reverse"> -->
+    <tr data-ng-repeat="beer in bottleBeers">
+
+        <!-- NOTE: USE THE PROPER FIELD -->
+        <td>{{ beer.name }}</td>
+
+        <!--
+        <td>{{ beer.city }}</td>
+        <td>{{ beer.orderTotal | currency }}</td>
+        <td>{{ beer.joined | date }}</td>
+        <td><a href="#/orders/{{ beer.id }}">View Orders</a></td>
+        -->
+
+    </tr>
+</table>
+
+<br />
+<span>Total Bottled Beers: {{ bottleBeers.length }}</span>
+<br /><br />
+<footer>Version: {{ appSettings.version }} </footer>
