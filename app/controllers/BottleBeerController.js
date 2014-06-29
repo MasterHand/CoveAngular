@@ -12,36 +12,28 @@
                 .success(function(json, bottleBeers) {
                     $log.log("HTTP REQUEST SUCCESSFUL");
 
+                    $log.log("TOTAL DOCS: " + (json.total_rows));
+
+                    var tDoc = {};   // Temp obj to hold CouchDB doc
+
+                    $log.log("ATTEMPTING TO DISPLAY ALL TEMP OBJECTS");
+                    for (var n = 0; n < json.total_rows; n++ ) {
+                        tDoc = json.rows[n].doc;
+                        $log.log(tDoc);
+                    }
+
+                    /* THE FOLLOWING CODE WORKS:
+                    tDoc = json.rows[0].doc;
+                    $log.log("ATTEMPTING TO DISPLAY TEMP OBJ");
+                    $log.log(tDoc);
+                    END */
+
+                    /* THE FOLLOWING CODE WORKS:
                     $log.log("ATTEMPTING TO DISPLAY SOMETHING");
                     $log.log(json.rows[0].doc);
+                    END */
 
-                    // Assign first doc to first bottleBeers element
-                    bottleBeers[0] = (json.rows[0].doc);
-
-                    $log.log("DEBUG: Logging first bottleBeers object below.");
-
-                    $log.log(bottleBeers[0]);
-
-                    // $log.log("ATTEMPTING TO PUSH DOC FROM JSON TO CONTAINER")
-                    // bottleBeers.push(json.rows[0].doc);
-
-                   /*
-                   for (var i = 0; i < json.rows.length; i++) {
-                        // Add document to bottleBeers container
-                        bottleBeers.push(json.rows[i].doc);
-
-                        // DEBUG
-                        if (i > (json.rows.length - 1)) {
-                            $log.log("SUCCESSFULLY POPULATED CONTAINER");
-                        }
-                    }
-                    */
-
-                  // $log.log("DEBUG: End of for loop.");
-
-                    // old
-                    // $scope.bottleBeers.content = bottleBeers;
-                    //return bottleBeers;
+                    // $log.log("DEBUG: Use Angular to Iterate through results");
 
 
                 })
@@ -55,13 +47,6 @@
 
 
     };
-
-
-
-
-
-
-
     
     BottleBeerController.$inject = ['$scope', '$log', 'BottleBeerFactory',
                                    'appSettings'];

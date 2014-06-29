@@ -7,7 +7,6 @@
         var factory = {};
 
         factory.getBottleBeer = function () {
-            //return $http.get(BottleBeerURL);
 
            return $http.get('app/db/BottleBeer.json');
         };
