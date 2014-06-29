@@ -12,6 +12,7 @@
            return $http.get('app/db/BottleBeer.json');
         };
 
+
         return factory;
     };
     
