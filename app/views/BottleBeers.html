@@ -1,3 +1,6 @@
+<body data-ng-controller="BottleBeerController">
+
+
 <h2>{{ appSettings.title }}</h2>
 Search by Name: <input type="text" data-ng-model="bottleBeerFilter.name" />
 <br /><br />
@@ -20,7 +23,14 @@ Search by Name: <input type="text" data-ng-model="bottleBeerFilter.name" />
 
         <!-- NOTE: USE THE PROPER FIELD -->
         <!--<td>{{ beer.name }}</td> -->
-        <td>Placeholder</td>
+
+
+        <td>{{beer.total_rows}}</td>
+        <td>{{beer.offset}}</td>
+
+       <!-- <td>{{beer.rows}}</td>
+
+
 
         <!--
         <td>{{ beer.city }}</td>
@@ -33,6 +43,8 @@ Search by Name: <input type="text" data-ng-model="bottleBeerFilter.name" />
 </table>
 
 <br />
-<span>Total Bottled Beers: {{ bottleBeers.length }}</span>
+<span>Total Bottled Beers: {{beer.total_rows}}</span>
 <br /><br />
 <footer>Version: {{ appSettings.version }} </footer>
+
+</body>
