@@ -14,4 +14,5 @@ dependencies:
 * Twitter Bootstrap 3
 * AngularJS 1.2+
 
+
 For more information, please contact Infinite Innovations LLC.
