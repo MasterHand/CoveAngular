@@ -10,7 +10,7 @@
             BottleBeerFactory.getBottleBeer()
                 .success(function(json) {
                     $scope.total_rows = json.total_rows;
-                    $scope.bottleBeers = new Array();           // Add bottleBeers to $scope
+                    $scope.bottleBeers = [];           // Add bottleBeers to $scope
 
                     // $log.log("HTTP REQUEST SUCCESSFUL");     // DEBUG
 
@@ -22,14 +22,6 @@
                         $scope.bottleBeers.push(tDoc);
 
                     }
-
-                    /* DEBUG: THE FOLLOWING CODE WORKS:
-                    $log.log("LOGGING ALL BOTTLE BEERS BELOW:");
-                    for (var t = 0; t < $scope.bottleBeers.length; t++) {
-                        // Log bottleBeers
-                        $log.log($scope.bottleBeers[t]);
-                    }
-                    END */
 
                 })
                 .error(function(data, status, headers, config) {
@@ -54,3 +46,10 @@
       .controller('BottleBeerController', BottleBeerController);
     
 }());
+/* DEBUG: THE FOLLOWING CODE WORKS [inside of .success()] :
+ $log.log("LOGGING ALL BOTTLE BEERS BELOW:");
+ for (var t = 0; t < $scope.bottleBeers.length; t++) {
+ // Log bottleBeers
+ $log.log($scope.bottleBeers[t]);
+ }
+ END */
