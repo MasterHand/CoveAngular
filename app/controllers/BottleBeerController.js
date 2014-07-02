@@ -10,13 +10,10 @@
             BottleBeerFactory.getBottleBeer()
                 .success(function(json) {
                     $scope.total_rows = json.total_rows;
-                    $scope.bottleBeers = [];           // Add bottleBeers to $scope
+                    $scope.bottleBeers = [];
 
-                    // $log.log("HTTP REQUEST SUCCESSFUL");     // DEBUG
+                    var tDoc = {};
 
-                    var tDoc = {};   // Temp Object to hold CouchDB doc
-
-                    // Populate bottleBeers Array
                     for (var n = 0; n < json.total_rows; n++ ) {
                         tDoc = json.rows[n].doc;
                         $scope.bottleBeers.push(tDoc);
@@ -46,10 +43,3 @@
       .controller('BottleBeerController', BottleBeerController);
     
 }());
-/* DEBUG: THE FOLLOWING CODE WORKS [inside of .success()] :
- $log.log("LOGGING ALL BOTTLE BEERS BELOW:");
- for (var t = 0; t < $scope.bottleBeers.length; t++) {
- // Log bottleBeers
- $log.log($scope.bottleBeers[t]);
- }
- END */
