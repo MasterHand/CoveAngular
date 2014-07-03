@@ -1,22 +1,22 @@
 (function() {
 
-    var BottleBeerController = function ($scope, $log, BottleBeerFactory, appSettings) {
+    var DraftBeerController = function ($scope, $log, DraftBeerFactory, appSettings) {
         $scope.sortBy = 'brand';
         $scope.reverse = false;
         $scope.total_rows = 0;
         $scope.appSettings = appSettings;
 
         function init() {
-            BottleBeerFactory.getBottleBeer()
+            DraftBeerFactory.getDraftBeer()
                 .success(function(json) {
                     $scope.total_rows = json.total_rows;
-                    $scope.bottleBeers = [];
+                    $scope.DraftBeers = [];
 
                     var tDoc = {};
 
                     for (var n = 0; n < json.total_rows; n++ ) {
                         tDoc = json.rows[n].doc;
-                        $scope.bottleBeers.push(tDoc);
+                        $scope.DraftBeers.push(tDoc);
 
                     }
 
@@ -36,10 +36,10 @@
 
     };
     
-    BottleBeerController.$inject = ['$scope', '$log', 'BottleBeerFactory',
+    DraftBeerController.$inject = ['$scope', '$log', 'DraftBeerFactory',
                                    'appSettings'];
 
     angular.module('coveApp')
-      .controller('BottleBeerController', BottleBeerController);
+      .controller('DraftBeerController', DraftBeerController);
     
 }());

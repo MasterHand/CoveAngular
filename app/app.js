@@ -6,7 +6,7 @@
         $routeProvider
             .when('/', {
                 controller: 'BottleBeerController',
-                templateUrl: 'app/views/BottleBeers.html'
+                templateUrl: 'app/views/BottleBeer.html'
             })
             .otherwise( { redirectTo: '/' } );
     });

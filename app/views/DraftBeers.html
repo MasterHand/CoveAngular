@@ -1,9 +1,9 @@
-<body data-ng-controller="BottleBeerController">
+<body data-ng-controller="DraftBeerController">
 
 <h2>{{ appSettings.title }}</h2>
-<h3>Bottle Beers</h3><span>Total: {{total_rows}}</span>
+<h3>Draft Beers</h3><span>Total: {{total_rows}}</span>
 <br />
-Filter: <input type="text" data-ng-model="bottleBeerFilter.brand" placeholder="Filter by brand" />
+Filter: <input type="text" data-ng-model="DraftBeerFilter.brand" placeholder="Filter by brand" />
 <br />
 <br />
 <br />
@@ -11,30 +11,30 @@ Filter: <input type="text" data-ng-model="bottleBeerFilter.brand" placeholder="F
     <tr>
         <!-- NOTE: USE THE PROPER FIELD -->
         <th data-ng-click="doSort('_id')">ID</th>
-        <th data-ng-click="doSort('brewer')">Brewer</th>
         <th data-ng-click="doSort('brand')">Brand</th>
-        <th data-ng-click="doSort('price')">Price</th>
-        <th data-ng-click="doSort('size')">Size</th>
+        <th data-ng-click="doSort('beer_7_oz')">7 oz</th>
+        <th data-ng-click="doSort('beer_20_oz')">20 oz</th>
+        <th data-ng-click="doSort('beer_64_oz')">64 oz</th>
+        <th data-ng-click="doSort('beer_4_oz')">4 oz</th>
+        <th data-ng-click="doSort('beer_10_oz')">10 oz</th>
+        <th data-ng-click="doSort('major_style')">Major Style</th>
+        <th data-ng-click="doSort('minor_style')">Minor Style</th>
         <th data-ng-click="doSort('abv')">&#37ABV</th>
-        <th data-ng-click="doSort('major_style')">Major_Style</th>
-        <th data-ng-click="doSort('minor_style')">Minor_Style</th>
-        <th data-ng-click="doSort('country')">Country</th>
-        <th data-ng-click="doSort('town')">Town</th>
 
     </tr>
 
-    <tr data-ng-repeat="beer in bottleBeers | filter:bottleBeerFilter | orderBy:sortBy:reverse">
+    <tr data-ng-repeat="beer in DraftBeers | filter:DraftBeerFilter | orderBy:sortBy:reverse">
         <!-- NOTE: USE THE PROPER FIELDS -->
         <td>{{beer._id}}&nbsp;</td>
-        <td>{{beer.brewer}}</td>
         <td>{{beer.brand}}</td>
-        <td>{{beer.price}}</td>
-        <td>{{beer.size}}</td>
-        <td>{{beer.abv}}</td>
+        <td>{{beer.beer_7_oz}}</td>
+        <td>{{beer.beer_20_oz}}</td>
+        <td>{{beer.beer_64_oz}}</td>
+        <td>{{beer.beer_4_oz}}</td>
+        <td>{{beer.beer_10_oz}}</td>
         <td>{{beer.major_style}}</td>
         <td>{{beer.minor_style}}</td>
-        <td>{{beer.country}}</td>
-        <td>{{beer.town}}</td>
+        <td>{{beer.abv}}</td>
 
 
 
