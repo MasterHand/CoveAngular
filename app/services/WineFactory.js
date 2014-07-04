@@ -10,9 +10,9 @@
         var wineURL = beg + "drink/_view/Wine" + end;     // Data URL (String)
 
         if (appSettings.devLocal)
-            factory.getLiquor = function () { return $http.get('app/db/Wine.json'); };
+            factory.getWine = function () { return $http.get('app/db/Wine.json'); };
         else {
-            factory.getLiquor = function () {
+            factory.getWine = function () {
                 return $http.get(wineURL);
             };
         }

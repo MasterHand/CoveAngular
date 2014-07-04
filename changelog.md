@@ -18,3 +18,7 @@
 - Added a convenient way 'appSettings.devLocal' to develop locally without worrying about CORS
 - More code tidying
 - NOTE: Liquor is a WIP
+
+## 0.5 - 2014-07-03 Bug-fix
+- Added liquors
+- Some bugs fixed
