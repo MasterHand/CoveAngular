@@ -24,8 +24,22 @@
                 controller: 'WineController',
                 templateUrl: 'app/views/Wines.html'
             })
+            .when('/Liquor', {
+                controller: 'LiquorController',
+                templateUrl: 'app/views/Liquor.html'
+            })
 
             .otherwise( { redirectTo: '/' } );
     });
+
+    app.run(function($http, $data, base64) {
+        // Local variables
+        var user =  $data.user;
+        var pass =  $data.pass;
+        // Set Headers
+        $http.defaults.headers.common['Accept'] = 'application/json';
+        $http.defaults.headers.common['Authorization'] = 'Basic ' + base64.encode(user + ':' + pass);
+    });
+
 
 }());

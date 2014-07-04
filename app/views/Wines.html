@@ -3,7 +3,7 @@
 <h2>{{ appSettings.title }}</h2>
 <h3>Wines</h3><span>Total: {{total_rows}}</span>
 <br />
-Filter: <input type="text" data-ng-model="wineFilter.vintner" placeholder="Filter by style" />
+Filter: <input type="text" data-ng-model="wineFilter.vintner" placeholder="Filter by vintner" />
 <br />
 <br />
 <br />
@@ -11,21 +11,21 @@ Filter: <input type="text" data-ng-model="wineFilter.vintner" placeholder="Filte
     <tr>
         <!-- NOTE: USE THE PROPER FIELD -->
         <th data-ng-click="doSort('_id')">ID</th>
-        <th data-ng-click="doSort('size')">Vintner</th>
-        <th data-ng-click="doSort('brewer')">Style</th>
-        <th data-ng-click="doSort('brand')">Type</th>
-        <th data-ng-click="doSort('price')">Bottle Price</th>
-        <th data-ng-click="doSort('abv')">Taste Notes</th>
+        <th data-ng-click="doSort('vintner')">Vintner</th>
+        <th data-ng-click="doSort('styles')">Style</th>
+        <th data-ng-click="doSort('type')">Type</th>
+        <th data-ng-click="doSort('bottle_price')">Bottle Price</th>
+        <th data-ng-click="doSort('tasting_notes')">Taste Notes</th>
     </tr>
 
-    <tr data-ng-repeat="wine in wines | filter:wineFilter | orderBy:sortBy:reverse">
+    <tr data-ng-repeat="ice in wines | filter:wineFilter | orderBy:sortBy:reverse">
         <!-- NOTE: USE THE PROPER FIELDS -->
-        <td>{{wine._id}}&nbsp;</td>
-        <td>{{wine.vintner}}</td>
-        <td>{{wine.style}}</td>
-        <td>{{wine.type}}</td>
-        <td>{{wine.bottle_price}}</td>
-        <td>{{wine.tasting_notes}}</td>
+        <td>{{ice._id}}&nbsp;</td>
+        <td>{{ice.vintner}}</td>
+        <td>{{ice.style}}</td>
+        <td>{{ice.type}}</td>
+        <td>{{ice.bottle_price}}</td>
+        <td>{{ice.tasting_notes}}</td>
     </tr>
 </table>
 <br />

@@ -1,22 +1,22 @@
 (function() {
 
-    var WineController = function ($scope, $log, WineFactory, appSettings) {
-        $scope.sortBy = 'vintner';
+    var LiquorController = function ($scope, $log, LiquorFactory, appSettings) {
+        $scope.sortBy = 'brand';
         $scope.reverse = false;
         $scope.total_rows = 0;
         $scope.appSettings = appSettings;
 
         function init() {
-            WineFactory.getLiquor()
+            LiquorFactory.getLiquor()
                 .success(function(json) {
                     $scope.total_rows = json.total_rows;
-                    $scope.wines = [];
+                    $scope.liquor = [];
 
                     var tDoc = {};
 
                     for (var n = 0; n < json.total_rows; n++ ) {
                         tDoc = json.rows[n].doc;
-                        $scope.wines.push(tDoc);
+                        $scope.liquor.push(tDoc);
 
                     }
 
@@ -36,10 +36,10 @@
 
     };
 
-    WineController.$inject = ['$scope', '$log', 'WineFactory',
+    LiquorController.$inject = ['$scope', '$log', 'LiquorFactory',
         'appSettings'];
 
     angular.module('coveApp')
-        .controller('WineController', WineController);
+        .controller('LiquorController', LiquorController);
 
 }());

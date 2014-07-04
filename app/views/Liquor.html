@@ -1,0 +1,42 @@
+<body data-ng-controller="LiquorController">
+
+<h2>{{ appSettings.title }}</h2>
+<h3>Wines</h3><span>Total: {{total_rows}}</span>
+<br />
+Filter: <input type="text" data-ng-model="LiquorFilter.brand" placeholder="Filter by brand" />
+<br />
+<br />
+<br />
+<table>
+    <tr>
+        <!-- NOTE: USE THE PROPER FIELD -->
+        <th data-ng-click="doSort('_id')">ID</th>
+        <th data-ng-click="doSort('price')">Brand</th>
+        <th data-ng-click="doSort('subbrand')">Sub Brand</th>
+        <th data-ng-click="doSort('liquorstyle')">Liquor Style</th>
+        <th data-ng-click="doSort('type')">Type</th>
+        <th data-ng-click="doSort('price')">Price</th>
+        <th data-ng-click="doSort('region')">Region</th>
+        <th data-ng-click="doSort('country')">Country</th>
+        <th data-ng-click="doSort('taste_notes')">Taste Notes</th>
+    </tr>
+
+    <tr data-ng-repeat="ice in liquor | filter:LiquorFilter | orderBy:sortBy:reverse">
+        <!-- NOTE: USE THE PROPER FIELDS -->
+        <td>{{ice._id}}&nbsp;</td>
+        <td>{{ice.brand}}</td>
+        <td>{{ice.subbrand}}</td>
+        <td>{{ice.liquorstyle}}</td>
+        <td>{{ice.type}}</td>
+        <td>{{ice.price}}</td>
+        <td>{{ice.region}}</td>
+        <td>{{ice.country}}</td>
+        <td>{{ice.taste_notes}}</td>
+
+    </tr>
+</table>
+<br />
+<br />
+<footer>Version: {{ appSettings.version }} </footer>
+
+</body>
