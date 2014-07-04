@@ -1,6 +1,6 @@
 (function() {
 
-    var BottleBeerFactory = function($http, $data, base64) {
+    var BottleBeerFactory = function($http, $data, base64, appSettings) {
       
         var factory = {};
 
@@ -11,19 +11,24 @@
         var end =   $data.db_end;
         var beerURL = beg + "drink/_view/BottleBeer" + end;     // Data URL (String)
 
-        factory.getBottleBeer = function () {
-            // Set Headers
-            $http.defaults.headers.common['Accept'] = 'application/json';
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + base64.encode(user + ':' + pass);
+        if (appSettings.devLocal)
+            factory.getBottleBeer = function () { return $http.get('app/db/BottleBeer.json'); };
+        else {
 
-            return $http.get(beerURL);
-        };      
+            factory.getBottleBeer = function () {
+                // Set Headers
+                $http.defaults.headers.common['Accept'] = 'application/json';
+                $http.defaults.headers.common['Authorization'] = 'Basic ' + base64.encode(user + ':' + pass);
+
+                return $http.get(beerURL);
+            };
+        }
 
         return factory;
     };
     
-    BottleBeerFactory.$inject = ['$http', '$data', 'base64'];
-        
+    BottleBeerFactory.$inject = ['$http', '$data', 'base64', 'appSettings'];
+
     angular.module('coveApp').factory('BottleBeerFactory', BottleBeerFactory);
                                            
 }());
