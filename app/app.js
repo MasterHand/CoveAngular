@@ -10,7 +10,7 @@
             })
             .when('/BottleBeers', {
                 controller: 'BottleBeerController',
-                templateUrl: 'app/views/BottleBeers.html'
+                templateUrl: 'app/views/BottleBeerTest.html'
             })
             .when('/DraftBeers', {
                 controller: 'DraftBeerController',
