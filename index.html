@@ -2,20 +2,26 @@
 <html data-ng-app="coveApp">
 
 <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <title>The Cove Administration</title>
+    <meta name="generator" content="WebStorm" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <script src="js/jquery.min.js"></script>
+
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
+
     <div data-ng-view></div>
 
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route.min.js"></script>
     <script src="js/angular-utf8-base64.min.js"></script>
+    <script src="js/ui-bootstrap-tpls-0.11.0.min.js"></script>
 
     <script src="app/coveData.js"></script>
     <script src="app/app.js"></script>
@@ -33,6 +39,20 @@
     <script src="app/controllers/CocktailController.js"></script>
     <script src="app/controllers/WineController.js"></script>
     <script src="app/controllers/LiquorController.js"></script>
+
+    <!-- Collapses sidebar -->
+    <script type="text/javascript">
+        var j = jQuery.noConflict();
+
+        j('[data-toggle=offcanvas]').click(function() {
+            j(this).toggleClass('visible-xs text-center');
+            j(this).find('i').toggleClass('glyphicon-chevron-right glyphicon-chevron-left');
+            j('.row-offcanvas').toggleClass('active');
+            j('#lg-menu').toggleClass('hidden-xs').toggleClass('visible-xs');
+            j('#xs-menu').toggleClass('visible-xs').toggleClass('hidden-xs');
+            j('#btnShow').toggle();
+        });
+    </script>
 
 </body>
 </html>

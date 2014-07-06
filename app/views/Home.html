@@ -1,5 +1,147 @@
 <body data-ng-controller="MainController">
 
+<div class="wrapper">
+    <div class="box">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- Include sidebar -->
+            <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
+                <div data-ng-include src="'app/views/sidebar.html'"></div>
+            </div>
+            <!-- /sidebar -->
+
+            <!-- main right col -->
+            <div class="column col-sm-10 col-xs-11" id="main">
+
+                <!-- Include top nav -->
+                <div class="navbar navbar-blue navbar-static-top">
+                    <div data-ng-include src="'app/views/topbar.html'"></div>
+                </div>
+                <!-- /top nav -->
+
+                <div class="padding">
+                    <div class="full col-sm-9">
+
+                        <!-- content -->
+                        <div class="row">
+
+                            <!-- main col left -->
+                            <div class="col-sm-5">
+                                <h3>The Cove App Administration</h3>
+                                <p><strong>Welcome Home </strong><a href="#" style="text-decoration: underline;">User</a></p>
+
+                                <br />
+                                <hr>
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"><h4>Quick Links</h4></div>
+                                    <div class="panel-body">
+                                        <div class="list-group">
+                                            <a href="http://bootply.com/tagged/modal" class="list-group-item">Bottled Beer</a>
+                                            <a href="http://bootply.com/tagged/datetime" class="list-group-item">Draft Beer</a>
+                                            <a href="http://bootply.com/tagged/datatable" class="list-group-item">Wine</a>
+                                            <a href="http://bootply.com/tagged/datatable" class="list-group-item">Liquor</a>
+                                            <a href="http://bootply.com/tagged/datatable" class="list-group-item">Cocktails</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="well">
+                                    <form class="form-horizontal" role="form">
+                                        <h4>New Announcement</h4>
+                                        <div class="form-group" style="padding:14px;">
+                                            <textarea class="form-control" placeholder="Type a message"></textarea>
+                                        </div>
+                                        <button class="btn btn-primary pull-right" type="button">Post</button>
+                                        <br />
+                                    </form>
+                                </div>
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"><h4>About This App</h4></div>
+                                    <div class="panel-body">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis orci eget sem rutrum, eu molestie est consequat. Nunc erat augue, tempus non sagittis nec, vulputate in nisl. Nulla rhoncus sapien vitae mauris consequat, non sodales diam tristique. Ut ligula nulla, ultricies vel tellus ut, eleifend lacinia ipsum.                         </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <!-- main col right -->
+                            <div class="col-sm-7">
+
+                                <div class="well">
+                                    <form class="form">
+                                        <h4>Inset Region</h4>
+                                        <div class="input-group text-center">
+                                            <input type="text" class="form-control input-lg" placeholder="Some input form">
+                                            <span class="input-group-btn"><button class="btn btn-lg btn-primary" type="button">SUBMIT</button></span>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"><h4>Where to find Information &amp; Support</h4></div>
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li><h4><a href="#">Primary Support Page</a></h4></li>
+                                            <li><h4><a href="#">Contact Infinite Innovations</a></h4></li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                        <hr>
+                                        Visit the pages above to receive support for this application. Please note that this application is in early-development and may experience issues. The proper contact information is available on the support page. The team at Infinite Innovations LLC wishes to provide the best experience with our software. Your testimony is always valued!
+                                    </div>
+                                </div>
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Sample Heading</h4></div>
+                                    <div class="panel-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item">Item One</li>
+                                            <li class="list-group-item">Item Two</li>
+                                            <li class="list-group-item">Item Three</li>
+                                        </ul>
+                                        <span>Replace the placeholders above with your content...</span>
+                                        <div class="clearfix"><hr>
+                                        </div>
+                                        <footer>Section Footer</footer>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><!--/row-->
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a href="#">Twitter</a> <small class="text-muted">|</small> <a href="#">Facebook</a> <small class="text-muted">|</small> <a href="#">Google+</a>
+                            </div>
+                        </div>
+
+                        <div class="row" id="footer">
+                            <div class="col-sm-6">
+
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <p class="text-center">
+                            <a href="http://infiniteinnovationsllc.com" target="ext">Copyright &copy Infinite Innovations LLC. Includes several other licensed work. For more information click here.</a>
+                        </p>
+
+                    </div><!-- /col-9 -->
+                </div><!-- /padding -->
+            </div>
+            <!-- /main -->
+
+        </div>
+    </div>
+</div>
+
+</body>
+<!--
 <h2>{{ appSettings.title }}</h2>
 <p><strong>{{ message }}</strong> User</p>
 <p>Quick Links:</p>
@@ -13,4 +155,4 @@
 <br />
 <footer>Version: {{ appSettings.version }} </footer>
 
-</body>
+-->

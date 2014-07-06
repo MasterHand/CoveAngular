@@ -1,6 +1,6 @@
 (function() {
     
-    var app = angular.module('coveApp', ['ngRoute', 'ab-base64','cove-data']);
+    var app = angular.module('coveApp', ['ngRoute', 'ab-base64','cove-data', 'ui.bootstrap']);
     
     app.config(function($routeProvider) {
         $routeProvider
