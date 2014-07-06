@@ -22,3 +22,7 @@
 ## 0.5 - 2014-07-03 Bug-fix
 - Added liquors
 - Some bugs fixed
+
+## 0.6 - 2014-07-06 TwitterBootstrap Integration
+-added twitter bootstrap elements to all pages
+-used ng-include directives to modularize code 

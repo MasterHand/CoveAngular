@@ -1,47 +1,113 @@
 <body data-ng-controller="DraftBeerController">
 
-<h2>{{ appSettings.title }}</h2>
-<h3>Draft Beers</h3><span>Total: {{total_rows}}</span>
-<br />
-Filter: <input type="text" data-ng-model="DraftBeerFilter.brand" placeholder="Filter by brand" />
-<br />
-<br />
-<br />
-<table class="table table-striped">
-    <tr>
-        <!-- NOTE: USE THE PROPER FIELD -->
-        <th data-ng-click="doSort('_id')">ID</th>
-        <th data-ng-click="doSort('brand')">Brand</th>
-        <th data-ng-click="doSort('beer_7_oz')">7 oz</th>
-        <th data-ng-click="doSort('beer_20_oz')">20 oz</th>
-        <th data-ng-click="doSort('beer_64_oz')">64 oz</th>
-        <th data-ng-click="doSort('beer_4_oz')">4 oz</th>
-        <th data-ng-click="doSort('beer_10_oz')">10 oz</th>
-        <th data-ng-click="doSort('major_style')">Major Style</th>
-        <th data-ng-click="doSort('minor_style')">Minor Style</th>
-        <th data-ng-click="doSort('abv')">&#37ABV</th>
+<div class="wrapper">
+    <div class="box">
+        <div class="row row-offcanvas row-offcanvas-left">
 
-    </tr>
+            <!-- Include sidebar -->
+            <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
+                <div data-ng-include src="'app/views/sidebar.html'"></div>
+            </div>
+            <!-- /sidebar -->
 
-    <tr data-ng-repeat="beer in DraftBeers | filter:DraftBeerFilter | orderBy:sortBy:reverse">
-        <!-- NOTE: USE THE PROPER FIELDS -->
-        <td>{{beer._id}}&nbsp;</td>
-        <td>{{beer.brand}}</td>
-        <td>{{beer.beer_7_oz}}</td>
-        <td>{{beer.beer_20_oz}}</td>
-        <td>{{beer.beer_64_oz}}</td>
-        <td>{{beer.beer_4_oz}}</td>
-        <td>{{beer.beer_10_oz}}</td>
-        <td>{{beer.major_style}}</td>
-        <td>{{beer.minor_style}}</td>
-        <td>{{beer.abv}}</td>
+            <!-- main right col -->
+            <div class="column col-sm-10 col-xs-11" id="main">
+
+                <!-- Include top nav -->
+                <div class="navbar navbar-blue navbar-static-top">
+                    <div data-ng-include src="'app/views/topbar.html'"></div>
+                </div>
+                <!-- /top nav -->
+
+                <div class="padding">
+                    <div class="full col-sm-9">
+
+                        <!-- DraftBeerController Addition into body of nav-->
 
 
+                        <div class="row">
+                            <h2>{{ appSettings.title }}</h2>
 
-    </tr>
-</table>
-<br />
-<br />
-<footer>Version: {{ appSettings.version }} </footer>
+                            <h3>Draft Beers</h3><span>Total: {{total_rows}}</span>
+                            <br/>
+                            Filter: <input type="text" data-ng-model="DraftBeerFilter.brand"
+                                           placeholder="Filter by brand"/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <table class="table table-striped">
+                                <tr>
+                                    <!-- NOTE: USE THE PROPER FIELD -->
+                                    <th data-ng-click="doSort('_id')">ID</th>
+                                    <th data-ng-click="doSort('brand')">Brand</th>
+                                    <th data-ng-click="doSort('beer_7_oz')">7 oz</th>
+                                    <th data-ng-click="doSort('beer_20_oz')">20 oz</th>
+                                    <th data-ng-click="doSort('beer_64_oz')">64 oz</th>
+                                    <th data-ng-click="doSort('beer_4_oz')">4 oz</th>
+                                    <th data-ng-click="doSort('beer_10_oz')">10 oz</th>
+                                    <th data-ng-click="doSort('major_style')">Major Style</th>
+                                    <th data-ng-click="doSort('minor_style')">Minor Style</th>
+                                    <th data-ng-click="doSort('abv')">&#37ABV</th>
+
+                                </tr>
+
+                                <tr data-ng-repeat="beer in DraftBeers | filter:DraftBeerFilter | orderBy:sortBy:reverse">
+                                    <!-- NOTE: USE THE PROPER FIELDS -->
+                                    <td>{{beer._id}}&nbsp;</td>
+                                    <td>{{beer.brand}}</td>
+                                    <td>{{beer.beer_7_oz}}</td>
+                                    <td>{{beer.beer_20_oz}}</td>
+                                    <td>{{beer.beer_64_oz}}</td>
+                                    <td>{{beer.beer_4_oz}}</td>
+                                    <td>{{beer.beer_10_oz}}</td>
+                                    <td>{{beer.major_style}}</td>
+                                    <td>{{beer.minor_style}}</td>
+                                    <td>{{beer.abv}}</td>
+
+
+                                </tr>
+                            </table>
+                            <br/>
+                            <br/>
+                            <footer>Version: {{ appSettings.version }}</footer>
+
+                        </div>
+                        <!--/row-->
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a href="#">Twitter</a>
+                                <small class="text-muted">|</small>
+                                <a href="#">Facebook</a>
+                                <small class="text-muted">|</small>
+                                <a href="#">Google+</a>
+                            </div>
+                        </div>
+
+                        <div class="row" id="footer">
+                            <div class="col-sm-6">
+
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <p class="text-center">
+                            <a href="http://infiniteinnovationsllc.com" target="ext">Copyright &copy Infinite
+                                Innovations LLC. Includes several other licensed work. For more information click
+                                here.</a>
+                        </p>
+
+                    </div>
+                    <!-- /col-9 -->
+                </div>
+                <!-- /padding -->
+            </div>
+            <!-- /main -->
+
+        </div>
+    </div>
+</div>
 
 </body>

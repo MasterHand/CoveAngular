@@ -1,37 +1,105 @@
-<body data-ng-controller="CocktailController">
+<body data-ng-controller="DraftBeerController">
 
-<h2>{{ appSettings.title }}</h2>
-<h3>Cocktails</h3><span>Total: {{total_rows}}</span>
-<br />
-Filter: <input type="text" data-ng-model="CocktailFilter.drink_name" placeholder="Filter by name" />
-<br />
-<br />
-<br />
-<table class="table table-striped">
-    <tr>
-        <!-- NOTE: USE THE PROPER FIELD -->
-        <th data-ng-click="doSort('_id')">ID</th>
-        <th data-ng-click="doSort('drink_name')">Drink Name</th>
-        <th data-ng-click="doSort('main_ingredient')">Main Ingredient</th>
-        <th data-ng-click="doSort('price')">Price</th>
-        <th data-ng-click="doSort('description')">Description</th>
+<div class="wrapper">
+    <div class="box">
+        <div class="row row-offcanvas row-offcanvas-left">
 
-    </tr>
+            <!-- Include sidebar -->
+            <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
+                <div data-ng-include src="'app/views/sidebar.html'"></div>
+            </div>
+            <!-- /sidebar -->
 
-    <tr data-ng-repeat="olive in Cocktail | filter:CocktailFilter | orderBy:sortBy:reverse">
-        <!-- NOTE: USE THE PROPER FIELDS -->
-        <td>{{olive._id}}&nbsp;</td>
-        <td>{{olive.drink_name}}</td>
-        <td>{{olive.main_ingredient}}</td>
-        <td>{{olive.price}}</td>
-        <td>{{olive.description}}</td>
+            <!-- main right col -->
+            <div class="column col-sm-10 col-xs-11" id="main">
+
+                <!-- Include top nav -->
+                <div class="navbar navbar-blue navbar-static-top">
+                    <div data-ng-include src="'app/views/topbar.html'"></div>
+                </div>
+                <!-- /top nav -->
+
+                <div class="padding">
+                    <div class="full col-sm-9">
+
+                        <!-- CocktailController Addition into body of nav-->
 
 
+                        <div class="row">
 
-    </tr>
-</table>
-<br />
-<br />
-<footer>Version: {{ appSettings.version }} </footer>
+                            <h2>{{ appSettings.title }}</h2>
+
+                            <h3>Cocktails</h3><span>Total: {{total_rows}}</span>
+                            <br/>
+                            Filter: <input type="text" data-ng-model="CocktailFilter.drink_name"
+                                           placeholder="Filter by name"/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <table class="table table-striped">
+                                <tr>
+                                    <!-- NOTE: USE THE PROPER FIELD -->
+                                    <th data-ng-click="doSort('_id')">ID</th>
+                                    <th data-ng-click="doSort('drink_name')">Drink Name</th>
+                                    <th data-ng-click="doSort('main_ingredient')">Main Ingredient</th>
+                                    <th data-ng-click="doSort('price')">Price</th>
+                                    <th data-ng-click="doSort('description')">Description</th>
+
+                                </tr>
+
+                                <tr data-ng-repeat="olive in Cocktail | filter:CocktailFilter | orderBy:sortBy:reverse">
+                                    <!-- NOTE: USE THE PROPER FIELDS -->
+                                    <td>{{olive._id}}&nbsp;</td>
+                                    <td>{{olive.drink_name}}</td>
+                                    <td>{{olive.main_ingredient}}</td>
+                                    <td>{{olive.price}}</td>
+                                    <td>{{olive.description}}</td>
+
+
+                                </tr>
+                            </table>
+                            <br/>
+                            <br/>
+                            <footer>Version: {{ appSettings.version }}</footer>
+
+
+                        </div>
+                        <!--/row-->
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a href="#">Twitter</a>
+                                <small class="text-muted">|</small>
+                                <a href="#">Facebook</a>
+                                <small class="text-muted">|</small>
+                                <a href="#">Google+</a>
+                            </div>
+                        </div>
+
+                        <div class="row" id="footer">
+                            <div class="col-sm-6">
+
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <p class="text-center">
+                            <a href="http://infiniteinnovationsllc.com" target="ext">Copyright &copy Infinite
+                                Innovations LLC. Includes several other licensed work. For more information click
+                                here.</a>
+                        </p>
+
+                    </div>
+                    <!-- /col-9 -->
+                </div>
+                <!-- /padding -->
+            </div>
+            <!-- /main -->
+
+        </div>
+    </div>
+</div>
 
 </body>
