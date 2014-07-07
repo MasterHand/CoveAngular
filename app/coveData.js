@@ -18,7 +18,7 @@ angular.module('cove-data',[]).constant('$data', (function() {
     var data = {
       user: 'commeelyinguederistroust',
       pass: '2imaJ47lISdfKTXV48oAKdXp',
-      db_beg: 'https://infiniteinnovations.cloudant.com/covebeta/_design/',
+      db_beg: 'https://infiniteinnovations.cloudant.com/covebeta/',
       db_end: '?include_docs=true&reduce=false'
     };
 

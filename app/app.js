@@ -12,6 +12,10 @@
                 controller: 'BottleBeerController',
                 templateUrl: 'app/views/BottleBeers.html'
             })
+            .when('/BottleBeerDetails/:drinkId', {
+                controller: 'BottleBeerDetailsController',
+                templateUrl: 'app/views/BottleBeerDetails.html'
+            })
             .when('/DraftBeers', {
                 controller: 'DraftBeerController',
                 templateUrl: 'app/views/DraftBeers.html'

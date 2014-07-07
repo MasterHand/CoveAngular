@@ -1,0 +1,91 @@
+<div class="wrapper">
+    <div class="box">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- Include sidebar -->
+            <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
+                <div data-ng-include src="'app/views/sidebar.html'"></div>
+            </div>
+            <!-- /sidebar -->
+
+            <!-- main right col -->
+            <div class="column col-sm-10 col-xs-11" id="main">
+
+                <!-- Include top nav -->
+                <div class="navbar navbar-blue navbar-static-top">
+                    <div data-ng-include src="'app/views/topbar.html'"></div>
+                </div>
+                <!-- /top nav -->
+
+                <div class="padding">
+                    <div class="full col-sm-9">
+
+                        <!-- BottleBeerController Addition into body of nav-->
+
+
+                        <div class="row">
+
+                            <h2>{{ appSettings.title }}</h2>
+
+                            <h3>{{ BottledBeer.brewer }} {{ BottledBeer.brand }}</h3>
+                            <br/>
+                            <br/>
+
+                            <ul style="list-style-type: none">
+                                <li>Price</li>
+                                <li>{{ BottledBeer.price }}</li>
+                                <li>Size</li>
+                                <li>{{ BottledBeer.size }}</li>
+                                <li>ABV</li>
+                                <li>{{ BottledBeer.abv }}</li>
+                                <li>Major Style</li>
+                                <li>{{ BottledBeer.major_style }}</li>
+                                <li>Minor Style</li>
+                                <li>{{ BottledBeer.minor_style }}</li>
+                                <li>Town</li>
+                                <li>{{ BottledBeer.town }}</li>
+                                <li>Country</li>
+                                <li>{{ BottledBeer.country }}</li>
+                            </ul>
+                            <br/>
+
+                            <footer>Version: {{ appSettings.version }}</footer>
+
+                        </div>
+                        <!--/row-->
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a href="#">Twitter</a>
+                                <small class="text-muted">|</small>
+                                <a href="#">Facebook</a>
+                                <small class="text-muted">|</small>
+                                <a href="#">Google+</a>
+                            </div>
+                        </div>
+
+                        <div class="row" id="footer">
+                            <div class="col-sm-6">
+
+                            </div>
+
+                        </div>
+
+                        <hr>
+
+                        <p class="text-center">
+                            <a href="http://infiniteinnovationsllc.com" target="ext">Copyright &copy Infinite
+                                Innovations LLC. Includes several other licensed work. For more information click
+                                here.</a>
+                        </p>
+
+                    </div>
+                    <!-- /col-9 -->
+                </div>
+                <!-- /padding -->
+            </div>
+            <!-- /main -->
+
+        </div>
+    </div>
+</div>
