@@ -30,13 +30,14 @@
                             <h3>{{ Cocktail.drink_name }} </h3>
                             <br/>
 
+                            <!-- See http://stackoverflow.com/questions/5899337/proper-way-to-make-html-nested-list -->
                             <ul style="list-style-type: none">
                                 <li><strong>Main Ingredient </strong></li>
-                                <li>{{ Cocktail.main_ingredient }}</li>
+                                <ul class="_no-icon"><li>{{ Cocktail.main_ingredient }}</li></ul>
                                 <li><strong>Price</strong></li>
-                                <li>{{ Cocktail.price }}</li>
+                                <ul class="_no-icon"><li>{{ Cocktail.price }}</li></ul>
                                 <li><strong>Description</strong></li>
-                                <li>{{ Cocktail.description }}</li>
+                                <ul class="_no-icon"><li>{{ Cocktail.description }}</li></ul>
 
                             </ul>
                             <br/>

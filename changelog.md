@@ -26,3 +26,12 @@
 ## 0.6 - 2014-07-06 Twitter Bootstrap Integration
 - added twitter bootstrap elements to all pages
 - used ng-include directives to modularize code
+
+## 0.7 - 2014-07-08 Drink Details
+- added drink details to all pages
+
+# Known Bugs
+- Drop-down menu
+- Unordered list nesting
+- Unable to display details while developing locally
+- Minor UI bugs

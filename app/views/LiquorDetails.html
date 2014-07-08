@@ -30,19 +30,20 @@
                             <h3>{{ Liquor.brand }} {{ Liquor.liquorstyle }}</h3>
                             <br/>
 
+                            <!-- See http://stackoverflow.com/questions/5899337/proper-way-to-make-html-nested-list -->
                             <ul style="list-style-type: none">
                                 <li><strong>Sub Brand</strong></li>
-                                <li>{{ Liquor.subbrand }}</li>
+                                <ul class="_no-icon"><li>{{ Liquor.subbrand }}</li></ul>
                                 <li><strong>Type</strong></li>
-                                <li>{{ Liquor.type }}</li>
+                                <ul class="_no-icon"><li>{{ Liquor.type }}</li></ul>
                                 <li><strong>Price</strong></li>
-                                <li>{{ Liquor.price }}</li>
+                                <ul class="_no-icon"><li>{{ Liquor.price }}</li></ul>
                                 <li><strong>Region</strong></li>
-                                <li>{{ Liquor.region }}</li>
+                                <ul class="_no-icon"><li>{{ Liquor.region }}</li></ul>
                                 <li><strong>Country</strong></li>
-                                <li>{{ Liquor.country }}</li>
+                                <ul class="_no-icon"><li>{{ Liquor.country }}</li></ul>
                                 <li><strong>Major Style</strong></li>
-                                <li>{{ Liquor.taste_notes }}</li>
+                                <ul class="_no-icon"><li>{{ Liquor.taste_notes }}</li></ul>
 
                             </ul>
                             <br/>
