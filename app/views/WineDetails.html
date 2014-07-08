@@ -31,15 +31,22 @@
                             <br/>
 
                             <!-- See http://stackoverflow.com/questions/5899337/proper-way-to-make-html-nested-list -->
-                            <ul style="list-style-type: none">
-                                <li><strong>Style</strong></li>
-                                <ul class="_no-icon"><li>{{ Wine.style }}</li></ul>
-                                <li><strong>Type</strong></li>
-                                <ul class="_no-icon"><li>{{ Wine.type }}</li></ul>
-                                <li><strong>Bottle Price</strong></li>
-                                <ul class="_no-icon"><li>{{ Wine.bottle_price }}</li></ul>
-                                <li><strong>Taste Notes</strong></li>
-                                <ul class="_no-icon"><li>{{ Wine.taste_notes }}</li></ul>
+                            <ul class="_no-icon">
+                                <li><strong>Style</strong>
+                                    <ul class="_no-icon"><li>{{ Wine.style }}</li></ul>
+                                </li>
+
+                                <li><strong>Type</strong>
+                                    <ul class="_no-icon"><li>{{ Wine.type }}</li></ul>
+                               </li>
+
+                                <li><strong>Bottle Price</strong>
+                                    <ul class="_no-icon"><li>{{ Wine.bottle_price }}</li></ul>
+                                </li>
+
+                                <li><strong>Taste Notes</strong>
+                                    <ul class="_no-icon"><li>{{ Wine.taste_notes }}</li></ul>
+                                </li>
 
                             </ul>
                             <br/>

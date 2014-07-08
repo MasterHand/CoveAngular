@@ -31,13 +31,18 @@
                             <br/>
 
                             <!-- See http://stackoverflow.com/questions/5899337/proper-way-to-make-html-nested-list -->
-                            <ul style="list-style-type: none">
-                                <li><strong>Main Ingredient </strong></li>
-                                <ul class="_no-icon"><li>{{ Cocktail.main_ingredient }}</li></ul>
-                                <li><strong>Price</strong></li>
-                                <ul class="_no-icon"><li>{{ Cocktail.price }}</li></ul>
-                                <li><strong>Description</strong></li>
-                                <ul class="_no-icon"><li>{{ Cocktail.description }}</li></ul>
+                            <ul class = "_no-icon">
+                                <li><strong>Main Ingredient </strong>
+                                    <ul class="_no-icon"><li>{{ Cocktail.main_ingredient }}</li></ul>
+                                </li>
+
+                                <li><strong>Price</strong>
+                                    <ul class="_no-icon"><li>{{ Cocktail.price }}</li></ul>
+                                </li>
+
+                                <li><strong>Description</strong>
+                                    <ul class="_no-icon"><li>{{ Cocktail.description }}</li></ul>
+                                </li>
 
                             </ul>
                             <br/>

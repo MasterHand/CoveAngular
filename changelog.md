@@ -32,6 +32,6 @@
 
 # Known Bugs
 - Drop-down menu
-- Unordered list nesting
+- Unordered list nesting (fixed)
 - Unable to display details while developing locally
 - Minor UI bugs
