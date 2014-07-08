@@ -39,6 +39,7 @@
                             <table class="table table-striped">
                                 <tr>
                                     <!-- NOTE: USE THE PROPER FIELD -->
+                                    <th>&nbsp;</th>
                                     <th data-ng-click="doSort('_id')">ID</th>
                                     <th data-ng-click="doSort('drink_name')">Drink Name</th>
                                     <th data-ng-click="doSort('main_ingredient')">Main Ingredient</th>
@@ -49,6 +50,8 @@
 
                                 <tr data-ng-repeat="olive in Cocktail | filter:CocktailFilter | orderBy:sortBy:reverse">
                                     <!-- NOTE: USE THE PROPER FIELDS -->
+                                    <td><a href="#/CocktailDetails/{{ olive._id }}">View</a></td>
+
                                     <td>{{olive._id}}&nbsp;</td>
                                     <td>{{olive.drink_name}}</td>
                                     <td>{{olive.main_ingredient}}</td>

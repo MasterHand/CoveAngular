@@ -7,7 +7,7 @@
         $scope.appSettings = appSettings;
 
         function init() {
-            BottleBeerFactory.getBottleBeer()
+            BottleBeerFactory.getBottleBeers()
                 .success(function(json) {
                     $scope.total_rows = json.total_rows;
                     $scope.bottleBeers = [];

@@ -7,7 +7,7 @@
         $scope.appSettings = appSettings;
 
         function init() {
-            CocktailFactory.getCocktail()
+            CocktailFactory.getCocktails()
                 .success(function(json) {
                     $scope.total_rows = json.total_rows;
                     $scope.Cocktail = [];

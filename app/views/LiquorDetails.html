@@ -1,5 +1,3 @@
-<body data-ng-controller="WineController">
-
 <div class="wrapper">
     <div class="box">
         <div class="row row-offcanvas row-offcanvas-left">
@@ -22,45 +20,33 @@
                 <div class="padding">
                     <div class="full col-sm-9">
 
-                        <!-- BottleBeerController Addition into body of nav-->
+                        <!-- DraftBeerController Addition into body of nav-->
 
 
                         <div class="row">
 
                             <h2>{{ appSettings.title }}</h2>
 
-                            <h3>Wines</h3><span>Total: {{total_rows}}</span>
+                            <h3>{{ Liquor.brand }} {{ Liquor.liquorstyle }}</h3>
                             <br/>
-                            Filter: <input type="text" data-ng-model="wineFilter.vintner"
-                                           placeholder="Filter by vintner"/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <table class="table table-striped">
-                                <tr>
-                                    <!-- NOTE: USE THE PROPER FIELD -->
-                                    <th>&nbsp;</th>
-                                    <th data-ng-click="doSort('_id')">ID</th>
-                                    <th data-ng-click="doSort('vintner')">Vintner</th>
-                                    <th data-ng-click="doSort('styles')">Style</th>
-                                    <th data-ng-click="doSort('type')">Type</th>
-                                    <th data-ng-click="doSort('bottle_price')">Bottle Price</th>
-                                    <th data-ng-click="doSort('tasting_notes')">Taste Notes</th>
-                                </tr>
 
-                                <tr data-ng-repeat="ice in wines | filter:wineFilter | orderBy:sortBy:reverse">
-                                    <!-- NOTE: USE THE PROPER FIELDS -->
-                                    <td><a href="#/WineDetails/{{ ice._id }}">View</a></td>
-                                    <td>{{ice._id}}&nbsp;</td>
-                                    <td>{{ice.vintner}}</td>
-                                    <td>{{ice.style}}</td>
-                                    <td>{{ice.type}}</td>
-                                    <td>{{ice.bottle_price}}</td>
-                                    <td>{{ice.tasting_notes}}</td>
-                                </tr>
-                            </table>
+                            <ul style="list-style-type: none">
+                                <li><strong>Sub Brand</strong></li>
+                                <li>{{ Liquor.subbrand }}</li>
+                                <li><strong>Type</strong></li>
+                                <li>{{ Liquor.type }}</li>
+                                <li><strong>Price</strong></li>
+                                <li>{{ Liquor.price }}</li>
+                                <li><strong>Region</strong></li>
+                                <li>{{ Liquor.region }}</li>
+                                <li><strong>Country</strong></li>
+                                <li>{{ Liquor.country }}</li>
+                                <li><strong>Major Style</strong></li>
+                                <li>{{ Liquor.taste_notes }}</li>
+
+                            </ul>
                             <br/>
-                            <br/>
+
                             <footer>Version: {{ appSettings.version }}</footer>
 
                         </div>
@@ -101,5 +87,3 @@
         </div>
     </div>
 </div>
-
-</body>

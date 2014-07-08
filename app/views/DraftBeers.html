@@ -38,6 +38,7 @@
                             <table class="table table-striped">
                                 <tr>
                                     <!-- NOTE: USE THE PROPER FIELD -->
+                                    <th>&nbsp;</th>
                                     <th data-ng-click="doSort('_id')">ID</th>
                                     <th data-ng-click="doSort('brand')">Brand</th>
                                     <th data-ng-click="doSort('beer_7_oz')">7 oz</th>
@@ -53,6 +54,8 @@
 
                                 <tr data-ng-repeat="beer in DraftBeers | filter:DraftBeerFilter | orderBy:sortBy:reverse">
                                     <!-- NOTE: USE THE PROPER FIELDS -->
+                                    <td><a href="#/DraftBeerDetails/{{ beer._id }}">View</a></td>
+
                                     <td>{{beer._id}}&nbsp;</td>
                                     <td>{{beer.brand}}</td>
                                     <td>{{beer.beer_7_oz}}</td>

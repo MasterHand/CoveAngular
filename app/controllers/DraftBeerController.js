@@ -7,7 +7,7 @@
         $scope.appSettings = appSettings;
 
         function init() {
-            DraftBeerFactory.getDraftBeer()
+            DraftBeerFactory.getDraftBeers()
                 .success(function(json) {
                     $scope.total_rows = json.total_rows;
                     $scope.DraftBeers = [];

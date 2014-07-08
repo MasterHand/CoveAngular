@@ -1,7 +1,8 @@
 (function() {
 
-    var BottleBeerDetailsController = function ($log, $scope, $routeParams, BottleBeerFactory) {
+    var BottleBeerDetailsController = function ($log, $scope, $routeParams, BottleBeerFactory, appSettings) {
         var drinkId = $routeParams.drinkId;
+        $scope.appSettings = appSettings;
         $scope.BottledBeer = null;
 
         function init() {
@@ -17,7 +18,7 @@
         init();
     };
 
-    BottleBeerDetailsController.$inject = ['$log', '$scope', '$routeParams', 'BottleBeerFactory'];
+    BottleBeerDetailsController.$inject = ['$log', '$scope', '$routeParams', 'BottleBeerFactory', 'appSettings'];
 
     angular.module('coveApp')
         .controller('BottleBeerDetailsController', BottleBeerDetailsController);

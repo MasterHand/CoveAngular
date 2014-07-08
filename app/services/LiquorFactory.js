@@ -1,26 +1,43 @@
 (function() {
 
-    var LiquorFactory = function($http, $data, base64, appSettings) {
+    var LiquorFactory = function($log, $http, $data, base64, appSettings) {
 
         var factory = {};
 
         // Prep Work
         var beg =   $data.db_beg;
         var end =   $data.db_end;
-        var LiquorURL = beg + "drink/_view/Liquor" + end;     // Data URL (String)
+        var LiquorURL = beg + "_design/drink/_view/Liquor" + end;     // Data URL (String)
 
         if (appSettings.devLocal)
-            factory.getLiquor = function () { return $http.get('app/db/Liquor.json'); };
+            factory.getLiquors = function () { return $http.get('app/db/Liquor.json'); };
         else {
-            factory.getLiquor = function () {
+            factory.getLiquors = function () {
                 return $http.get(LiquorURL);
             };
         }
+        if (appSettings.devLocal) {
+            $log.log("Details view currently unsupported while devLocal = true");
+            factory.getLiquor = function (drinkId) { return $log.log("DEBUG ERROR: Not implemented yet!"); };
+
+            //    factory.getLiquor = function (drinkId) { return $http.get('app/db/Liquor.json'); };
+
+            // TO-DO: Add functionality to get nested document out of locally served JSON
+        }
+
+        else {
+
+            factory.getLiquor = function (drinkId) {
+                return $http.get(beg + drinkId);
+            };
+        }
+
+
 
         return factory;
     };
 
-    LiquorFactory.$inject = ['$http', '$data', 'base64', 'appSettings'];
+    LiquorFactory.$inject = ['$log','$http', '$data', 'base64', 'appSettings'];
 
     angular.module('coveApp').factory('LiquorFactory', LiquorFactory);
 

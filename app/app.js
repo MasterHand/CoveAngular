@@ -20,19 +20,34 @@
                 controller: 'DraftBeerController',
                 templateUrl: 'app/views/DraftBeers.html'
             })
+            .when('/DraftBeerDetails/:drinkId', {
+                controller: 'DraftBeerDetailsController',
+                templateUrl: 'app/views/DraftBeerDetails.html'
+            })
             .when('/Cocktail', {
                 controller: 'CocktailController',
                 templateUrl: 'app/views/Cocktail.html'
+            })
+            .when('/CocktailDetails/:drinkId', {
+                controller: 'CocktailDetailsController',
+                templateUrl: 'app/views/CocktailDetails.html'
             })
             .when('/Wines', {
                 controller: 'WineController',
                 templateUrl: 'app/views/Wines.html'
             })
+            .when('/WineDetails/:drinkId', {
+                controller: 'WineDetailsController',
+                templateUrl: 'app/views/WineDetails.html'
+            })
             .when('/Liquor', {
                 controller: 'LiquorController',
                 templateUrl: 'app/views/Liquor.html'
             })
-
+            .when('/LiquorDetails/:drinkId', {
+                controller: 'LiquorDetailsController',
+                templateUrl: 'app/views/LiquorDetails.html'
+            })
             .otherwise( { redirectTo: '/' } );
     });
 

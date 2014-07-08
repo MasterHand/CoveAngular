@@ -39,6 +39,7 @@
                             <table class="table table-striped">
                                 <tr>
                                     <!-- NOTE: USE THE PROPER FIELD -->
+                                    <th>&nbsp;</th>
                                     <th data-ng-click="doSort('_id')">ID</th>
                                     <th data-ng-click="doSort('brewer')">Brewer</th>
                                     <th data-ng-click="doSort('brand')">Brand</th>
@@ -54,6 +55,7 @@
 
                                 <tr data-ng-repeat="beer in bottleBeers | filter:bottleBeerFilter | orderBy:sortBy:reverse">
                                     <!-- NOTE: USE THE PROPER FIELDS -->
+                                    <td><a href="#/BottleBeerDetails/{{ beer._id }}">View</a></td>
                                     <td>{{beer._id}}&nbsp;</td>
                                     <td>{{beer.brewer}}</td>
                                     <td>{{beer.brand}}</td>
@@ -64,7 +66,6 @@
                                     <td>{{beer.minor_style}}</td>
                                     <td>{{beer.country}}</td>
                                     <td>{{beer.town}}</td>
-                                    <td><a href="#/BottleBeerDetails/{{ beer._id }}">View Drink</a></td>
 
 
                                 </tr>

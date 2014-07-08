@@ -7,7 +7,7 @@
         $scope.appSettings = appSettings;
 
         function init() {
-            LiquorFactory.getLiquor()
+            LiquorFactory.getLiquors()
                 .success(function(json) {
                     $scope.total_rows = json.total_rows;
                     $scope.liquor = [];
