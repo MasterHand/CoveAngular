@@ -7,7 +7,7 @@
         // Prep Work
         var beg =   $data.db_beg;
         var end =   $data.db_end;
-        var wineURL = beg + "_design_drink/_view/Wine" + end;     // Data URL (String)
+        var wineURL = beg + "_design/drink/_view/Wine" + end;     // Data URL (String)
 
         if (appSettings.devLocal)
             factory.getWines = function () { return $http.get('app/db/Wine.json'); };
