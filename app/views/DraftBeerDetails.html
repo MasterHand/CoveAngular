@@ -30,36 +30,28 @@
                             <h3>{{ draftBeer.brand }} {{ draftBeer.major_syle }}</h3>
                             <br/>
 
-                            <!-- See http://stackoverflow.com/questions/5899337/proper-way-to-make-html-nested-list -->
                             <ul class = "_no-icon">
-                                <li><strong>7 oz</strong>
-                                    <ul class="_no-icon"><li>{{ draftBeer.beer_7_oz }}</li></ul>
-                                </li>
-
-                                <li><strong>20 oz</strong>
-                                    <ul class="_no-icon"><li>{{ draftBeer.beer_20_oz }}</li></ul>
-                                </li>
-
                                 <li><strong>64 oz</strong>
-                                    <ul class="_no-icon"><li>{{ draftBeer.beer_64_oz }}</li></ul>
+                                    <ul class="_no-icon"><li>&nbsp;{{ draftBeer.beer_64_oz }}</li></ul>
                                 </li>
-
-                                <li><strong>4 oz</strong>
-                                    <ul class="_no-icon"><li>{{ draftBeer.beer_4_oz }}</li></ul>
+                                <li><strong>20 oz</strong>
+                                    <ul class="_no-icon"><li>&nbsp;{{ draftBeer.beer_20_oz }}</li></ul>
                                 </li>
-
                                 <li><strong>10 oz</strong>
-                                    <ul class="_no-icon"><li>{{ draftBeer.beer_10_oz }}</li></ul>
+                                    <ul class="_no-icon"><li>&nbsp;{{ draftBeer.beer_10_oz }}</li></ul>
                                 </li>
-
+                                <li><strong>7 oz</strong>
+                                    <ul class="_no-icon"><li>&nbsp;{{ draftBeer.beer_7_oz }}</li></ul>
+                                </li>
+                                <li><strong>4 oz</strong>
+                                    <ul class="_no-icon"><li>&nbsp;{{ draftBeer.beer_4_oz }}</li></ul>
+                                </li>
                                 <li><strong>Major Style</strong>
                                     <ul class="_no-icon"><li>{{ draftBeer.major_style }}</li></ul>
                                 </li>
-
                                 <li><strong>Minor Style</strong>
                                     <ul class="_no-icon"><li>{{ draftBeer.minor_style }}</li></ul>
                                 </li>
-
                                 <li><strong>&#37ABV</strong>
                                     <ul class="_no-icon"><li>{{ draftBeer.abv }}</li></ul>
                                 </li>
