@@ -17,8 +17,10 @@ angular.module('cove-data',[]).constant('$data', (function() {
 
     var devLocal = true;     // Set this to true in order to use Express server.js (Node)
 
+    var data = {};
+
     if (devLocal) {
-        var data = {
+        data = {
             user: '',
             pass: '',
             db_beg: 'http://127.0.0.1:8080/',
@@ -27,7 +29,7 @@ angular.module('cove-data',[]).constant('$data', (function() {
         };
     }
     else {
-        var data = {
+        data = {
             user: 'commeelyinguederistroust',
             pass: '2imaJ47lISdfKTXV48oAKdXp',
             db_beg: 'https://infiniteinnovations.cloudant.com/covebeta/',
