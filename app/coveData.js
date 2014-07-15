@@ -33,7 +33,7 @@ angular.module('cove-data',[]).constant('$data', (function() {
             user: 'commeelyinguederistroust',
             pass: '2imaJ47lISdfKTXV48oAKdXp',
             db_beg: 'https://infiniteinnovations.cloudant.com/covebeta/',
-            db_mid: '_design/drink/_view',
+            db_mid: '_design/drink/_view/',
             db_end: '?include_docs=true&reduce=false'
         };
     }
