@@ -34,6 +34,23 @@
             $scope.reverse = !$scope.reverse;
         };
 
+        $scope.editEvent = function(beer){
+
+            $scope.opts = ['on', 'off'];
+
+            if (beer === 'new'){
+                $log.log('envoke NEW editEvent, should launch modal...');
+                $scope.newEvent = true;
+                $scope.beer = {name: '', shortname: '', phonenumber: '', state: '', voteoptions: [{id:1, name: ''}]};
+            }
+            else {
+                $log.log('edit this Event, should launch modal...');
+                $scope.newEvent = false;
+                $scope.beer = beer;
+            }
+        };
+
+
     };
     
     BottleBeerController.$inject = ['$scope', '$log', 'BottleBeerFactory',

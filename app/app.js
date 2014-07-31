@@ -1,6 +1,6 @@
 (function() {
     
-    var app = angular.module('coveApp', ['ngRoute', 'ab-base64','cove-data', 'ui.bootstrap', 'ngGrid']);
+    var app = angular.module('coveApp', ['ngRoute', 'ab-base64','cove-data', 'ui.bootstrap']);
     
     app.config(function($routeProvider) {
         $routeProvider
@@ -11,6 +11,7 @@
             .when('/BottleBeers', {
                 controller: 'BottleBeerController',
                 templateUrl: 'app/views/BottleBeers.html'
+
             })
             .when('/BottleBeerDetails/:drinkId', {
                 controller: 'BottleBeerDetailsController',
@@ -59,6 +60,7 @@
         $http.defaults.headers.common['Accept'] = 'application/json';
         $http.defaults.headers.common['Authorization'] = 'Basic ' + base64.encode(user + ':' + pass);
     });
+
 
 
 }());

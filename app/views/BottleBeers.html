@@ -25,12 +25,18 @@
 <!-- BottleBeerController Addition into body of nav-->
 
 
+
                         <div class="row">
+
 
                             <h2>{{ appSettings.title }}</h2>
 
                             <h3>Bottle Beers</h3><span>Total: {{total_rows}}</span>
                             <br/>
+
+                            <button class="btn btn-success" data-ng-click="editEvent('new')" data-ng-toggle="modal" data-target="#myModal">
+                                <i class="icon-calendar icon-white"></i>&nbsp;Create New Event</button>
+
                             Filter: <input type="text" data-ng-model="bottleBeerFilter.brand"
                                            placeholder="Filter by brand"/>
                             <br/>
@@ -55,7 +61,10 @@
 
                                 <tr data-ng-repeat="beer in bottleBeers | filter:bottleBeerFilter | orderBy:sortBy:reverse">
                                     <!-- NOTE: USE THE PROPER FIELDS -->
-                                    <td><a href="#/BottleBeerDetails/{{ beer._id }}">View</a></td>
+                                    <!--<td><a href="#/BottleBeerDetails/{{ beer._id }}">View</a></td>!-->
+                                    <td>
+                                        <button role='button' class='btn' data-ng-click="editEvent(beer)" data-toggle="modal" data-target="#myModal">Edit</button></td>
+
                                     <td>{{beer._id}}&nbsp;</td>
                                     <td>{{beer.brewer}}</td>
                                     <td>{{beer.brand}}</td>
@@ -68,14 +77,19 @@
                                     <td>{{beer.town}}</td>
 
 
+
                                 </tr>
                             </table>
+                              <div class="modal fade my" data-ng-include src="'app/views/tester.html'" id="myModal" role='dialog'></div>
+
+
+                            </div>
                             <br/>
                             <br/>
                             <footer>Version: {{ appSettings.version }}</footer>
 
 
-                        </div>
+
                         <!--/row-->
 
                         <div class="row">

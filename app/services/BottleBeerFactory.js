@@ -11,7 +11,7 @@
         var BottleBeerURL = beg + mid + "BottleBeer" + end;     // Data URL (String)
 
         factory.getBottleBeers = function () {
-            $log.log(BottleBeerURL);
+            // $log.log(BottleBeerURL);
             return $http.get(BottleBeerURL);
         };
 
