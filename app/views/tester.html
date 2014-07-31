@@ -1,32 +1,35 @@
 
-<div class='modal-header'>
+<div class = "modal-dialog">
+    <div class = "modal-content">
+    <div class = "modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 ng-hide='newEvent'>Edit Event: {{beer._id}}</h3>
     <h3 ng-show='newEvent'>New Event</h3>
 </div>
+
 <form>
     <fieldset>
-        <div class='modal-body'>
+        <div class="modal-body">
             <label>Brewer</label>
-            <input type='text' ng-model="beer.brewer"/>
+            <input type="text" ng-model="beer.brewer"/>
             <label>Brand</label>
-            <input type='text' ng-model="beer.brand"/>
+            <input type="text" ng-model="beer.brand"/>
             <label>Price</label>
-            <input type='text' ng-model="beer.price"/>
+            <input type="text" ng-model="beer.price"/>
             <label>Size</label>
-            <input type='text' ng-model="beer.size"/>
+            <input type="text" ng-model="beer.size"/>
             <label>Price</label>
-            <input type='text' ng-model="beer.price"/>
+            <input type="text" ng-model="beer.price"/>
             <label>ABV</label>
-            <input type='text' ng-model="beer.abv"/>
+            <input type="text" ng-model="beer.abv"/>
             <label>Major Style</label>
-            <input type='text' ng-model="beer.major_style"/>
+            <input type="text" ng-model="beer.major_style"/>
             <label>Minor Style</label>
-            <input type='text' ng-model="beer.minor_style"/>
+            <input type="text" ng-model="beer.minor_style"/>
             <label>Country</label>
-            <input type='text' ng-model="beer.country"/>
+            <input type="text" ng-model="beer.country"/>
             <label>Town</label>
-            <input type='text' ng-model="beer.town"/>
+            <input type="text" ng-model="beer.town"/>
 
             <label>State</label>
             <select ng-model="event.state" ng-options="opt for opt in opts"></select>
@@ -38,12 +41,16 @@
             </div>
         </div>
         <p> delete, save, add options, not implemented yet</p>
-        <div class='modal-footer'>
+        <div class="modal-footer">
             <a class="btn" ng-click='addVoteOption()'>Add Option</a>
             <button type='submit' class="btn btn-danger" data-dismiss="modal" ng-click="delete()">Delete</button>
             <button type='submit' class="btn btn-primary" data-dismiss="modal" ng-click="save()">Save</button>
         </div>
     </fieldset>
 </form>
+
+</div>
+    </div>
+
 
 
